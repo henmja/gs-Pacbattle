@@ -1,0 +1,13 @@
+ {
+     "name": "Pacbattle",
+     "players": 4,
+     "description": "Devour your opponents within one minute. If there is more than one player left after one minute, the player with the highest score will win. Biting other players or eating food increases score by one.",
+     "launch-options": {
+         "all": [
+             "java",
+             "-Djava.library.path=games/pacbattle/lib",
+             "-jar",
+             "games/pacbattle/bin/pacbattle.jar"
+         ]
+     }
+ }
