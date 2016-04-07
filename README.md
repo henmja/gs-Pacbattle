@@ -32,7 +32,9 @@ You should now be able to launch the game from your IDE. Remember that you need 
 
 To package the game for distribuiton you must execute the following command:
 
-mvn clean compile assembly:single Now create this folder structure:
+mvn clean compile assembly:single 
+
+Now create this folder structure:
 
 pacbattle/bin Copy game.json, screenshot.png and the controller folder into the pacbattle folder. Copy the target/natives folder into it too and rename it to lib. Now copy the jar file in the target folder into the pacbattle/bin folder and rename it to pacbattle.jar.
 
