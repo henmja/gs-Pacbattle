@@ -516,10 +516,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (set2) {
 				g.drawString("p2 score: " + score2, 1050, 20);
 			}
-			if (set4) {
+			if (set3) {
 				g.drawString("p3 score: " + score3, 1050, 680);
 			}
-			if (set3) {
+			if (set4) {
 				g.drawString("p4 score: " + score4, 10, 680);
 			}
 
