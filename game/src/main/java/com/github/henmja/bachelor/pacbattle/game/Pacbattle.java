@@ -696,9 +696,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 			inc = false;
 		} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
+			score1 += 1;
 			if (size1 <= 4) {
 				size1 += 1;
-				score1 += 1;
 				if (gameover != true) {
 					try {
 						AudioInputStream audioIn = AudioSystem
@@ -727,9 +727,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 			inc2 = false;
 		} else if (newRadiusP2 > oldRadiusP2 && inc2 == true) {
+			score2 += 1;
 			if (size2 <= 4) {
 				size2 += 1;
-				score2 += 1;
 				if (gameover != true) {
 					try {
 						AudioInputStream audioIn = AudioSystem
@@ -783,9 +783,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				}
 				inc = false;
 			} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
+				score1 += 1;
 				if (size1 <= 4) {
 					size1 += 1;
-					score1 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -814,9 +814,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc2 = false;
 			} else if (newRadiusP3 > oldRadiusP3 && inc2 == true) {
+				score3 += 1;
 				if (size3 <= 4) {
 					size3 += 1;
-					score3 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -870,9 +870,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 			inc = false;
 		} else if (newRadiusP2 > oldRadiusP2 && inc == true) {
+			score2 += 1;
 			if (size2 <= 4) {
 				size2 += 1;
-				score2 += 1;
 				if (gameover != true) {
 					try {
 						AudioInputStream audioIn = AudioSystem
@@ -901,9 +901,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 			inc2 = false;
 		} else if (newRadiusP3 > oldRadiusP3 && inc2 == true) {
+			score3 += 1;
 			if (size3 <= 4) {
 				size3 += 1;
-				score3 += 1;
 				if (gameover != true) {
 					try {
 						AudioInputStream audioIn = AudioSystem
@@ -957,9 +957,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc = false;
 			} else if (newRadiusP3 > oldRadiusP3 && inc == true) {
+				score3 += 1;
 				if (size3 <= 4) {
 					size3 += 1;
-					score3 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -988,9 +988,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
+				score4 += 1;
 				if (size4 <= 4) {
 					size4 += 1;
-					score4 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -1043,9 +1043,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc = false;
 			} else if (newRadiusP2 > oldRadiusP2 && inc == true) {
+				score2 += 1;
 				if (size2 <= 4) {
 					size2 += 1;
-					score2 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -1074,9 +1074,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
+				score4 += 1;
 				if (size4 <= 4) {
 					size4 += 1;
-					score4 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -1130,9 +1130,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc = false;
 			} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
+				score1 += 1;
 				if (size1 <= 4) {
 					size1 += 1;
-					score1 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
@@ -1161,9 +1161,9 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
+				score4 += 1;
 				if (size4 <= 4) {
 					size4 += 1;
-					score4 += 1;
 					if (gameover != true) {
 						try {
 							AudioInputStream audioIn = AudioSystem
