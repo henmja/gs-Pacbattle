@@ -391,14 +391,16 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			throws SlickException {
 		container.setShowFPS(false);
 		if (gameover == false) {
+			if (p1!=null) {
 			eatFood(p1, p1X, p1Y, p1Mouth);
-			if (set2) {
+			}
+			if (p2!=null) {
 				eatFood(p2, p2X, p2Y, p2Mouth);
 			}
-			if (set3) {
+			if (set3&&p3!=null) {
 				eatFood(p3, p3X, p3Y, p3Mouth);
 			}
-			if (set4) {
+			if (set4&&p4!=null) {
 				eatFood(p4, p4X, p4Y, p4Mouth);
 			}
 		}
@@ -515,10 +517,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				g.drawString("p2 score: " + score2, 1050, 20);
 			}
 			if (set4) {
-				g.drawString("p4 score: " + score4, 1050, 680);
+				g.drawString("p3 score: " + score3, 1050, 680);
 			}
 			if (set3) {
-				g.drawString("p3 score: " + score3, 10, 680);
+				g.drawString("p4 score: " + score4, 10, 680);
 			}
 
 			g.setColor(Color.white);
@@ -675,7 +677,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 		if (size1 != 0 && size2 != 0) {
 			n = 1;
-			shrinkMouth(p1, p2, pl1Rot, pl2Rot, size1, size2, score1, score2);
+			adjustMouthColl(p1, p2, pl1Rot, pl2Rot, size1, size2, score1, score2);
 			collisionDetection(p1, p2, p1Mouth, p2Mouth, pl1Rot, pl2Rot, size1,
 					size2);
 			newRadiusP1 = p1.getRadius();
@@ -688,6 +690,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (size1 >= 1) {
 				size1 -= 1;
 			}
+			if (score1 > 0) {
+				score1 -= 1;
+			}
+
 			inc = false;
 		} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
 			if (size1 <= 4) {
@@ -714,6 +720,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (size2 >= 1) {
 				size2 -= 1;
 			}
+			if (score2 > 0) {
+				score2 -= 1;
+			}
+
 			inc2 = false;
 		} else if (newRadiusP2 > oldRadiusP2 && inc2 == true) {
 			if (size2 <= 4) {
@@ -754,7 +764,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				n = 2;
 				oldSize1 = size1;
 				oldSize3 = size3;
-				shrinkMouth(p1, p3, pl1Rot, pl3Rot, size1, size3, score1,
+				adjustMouthColl(p1, p3, pl1Rot, pl3Rot, size1, size3, score1,
 						score3);
 				collisionDetection(p1, p3, p1Mouth, p3Mouth, pl1Rot, pl3Rot,
 						size1, size3);
@@ -764,6 +774,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (newRadiusP1 < oldRadiusP1 && inc == true) {
 				if (size1 >= 1) {
 					size1 -= 1;
+					if (score1 > 0) {
+						score1 -= 1;
+					}
+
 				}
 				inc = false;
 			} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
@@ -791,6 +805,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size3 >= 1) {
 					size3 -= 1;
 				}
+				if (score3 > 0) {
+					score3 -= 1;
+				}
+
 				inc2 = false;
 			} else if (newRadiusP3 > oldRadiusP3 && inc2 == true) {
 				if (size3 <= 4) {
@@ -830,7 +848,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				oldSize2 = size2;
 				oldSize3 = size3;
 				n = 3;
-				shrinkMouth(p2, p3, pl2Rot, pl3Rot, size2, size3, score2,
+				adjustMouthColl(p2, p3, pl2Rot, pl3Rot, size2, size3, score2,
 						score3);
 				collisionDetection(p2, p3, p2Mouth, p3Mouth, pl2Rot, pl3Rot,
 						size2, size3);
@@ -842,6 +860,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (size2 >= 1) {
 				size2 -= 1;
 			}
+			if (score2 > 0) {
+				score2 -= 1;
+			}
+
 			inc = false;
 		} else if (newRadiusP2 > oldRadiusP2 && inc == true) {
 			if (size2 <= 4) {
@@ -868,6 +890,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			if (size3 >= 1) {
 				size3 -= 1;
 			}
+			if (score3 > 0) {
+				score3 -= 1;
+			}
+
 			inc2 = false;
 		} else if (newRadiusP3 > oldRadiusP3 && inc2 == true) {
 			if (size3 <= 4) {
@@ -908,7 +934,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				n = 4;
 				oldSize3 = size3;
 				oldSize4 = size4;
-				shrinkMouth(p3, p4, pl3Rot, pl4Rot, size3, size4, score3,
+				adjustMouthColl(p3, p4, pl3Rot, pl4Rot, size3, size4, score3,
 						score4);
 				collisionDetection(p3, p4, p3Mouth, p4Mouth, pl3Rot, pl4Rot,
 						size3, size4);
@@ -919,6 +945,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size3 >= 1) {
 					size3 -= 1;
 				}
+				if (score3 > 0) {
+					score3 -= 1;
+				}
+
 				inc = false;
 			} else if (newRadiusP3 > oldRadiusP3 && inc == true) {
 				if (size3 <= 4) {
@@ -945,6 +975,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size4 >= 1) {
 					size4 -= 1;
 				}
+				if (score4 > 0) {
+					score4 -= 1;
+				}
+
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
 				if (size4 <= 4) {
@@ -986,7 +1020,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			}
 			oldSize2 = size2;
 			oldSize4 = size4;
-			shrinkMouth(p2, p4, pl2Rot, pl4Rot, size2, size4, score2, score4);
+			adjustMouthColl(p2, p4, pl2Rot, pl4Rot, size2, size4, score2, score4);
 			collisionDetection(p2, p4, p2Mouth, p4Mouth, pl2Rot, pl4Rot, size2,
 					size4);
 			newRadiusP2 = p2.getRadius();
@@ -995,6 +1029,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size2 >= 1) {
 					size2 -= 1;
 				}
+				if (score2 > 0) {
+					score2 -= 1;
+				}
+
 				inc = false;
 			} else if (newRadiusP2 > oldRadiusP2 && inc == true) {
 				if (size2 <= 4) {
@@ -1021,6 +1059,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size4 >= 1) {
 					size4 -= 1;
 				}
+				if (score4 > 0) {
+					score4 -= 1;
+				}
+
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
 				if (size4 <= 4) {
@@ -1061,7 +1103,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				n = 6;
 				oldSize1 = size1;
 				oldSize4 = size4;
-				shrinkMouth(p1, p4, pl1Rot, pl4Rot, size1, size4, score1,
+				adjustMouthColl(p1, p4, pl1Rot, pl4Rot, size1, size4, score1,
 						score4);
 				collisionDetection(p1, p4, p1Mouth, p4Mouth, pl1Rot, pl4Rot,
 						size1, size4);
@@ -1072,6 +1114,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size1 >= 1) {
 					size1 -= 1;
 				}
+				if (score1 > 0) {
+					score1 -= 1;
+				}
+
 				inc = false;
 			} else if (newRadiusP1 > oldRadiusP1 && inc == true) {
 				if (size1 <= 4) {
@@ -1098,6 +1144,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 				if (size4 >= 1) {
 					size4 -= 1;
 				}
+				if (score4 > 0) {
+					score4 -= 1;
+				}
+
 				inc2 = false;
 			} else if (newRadiusP4 > oldRadiusP4 && inc2 == true) {
 				if (size4 <= 4) {
@@ -1832,7 +1882,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void shrinkMouth(Circle pl1, Circle pl2, String pl1Rot,
+	public void adjustMouthColl(Circle pl1, Circle pl2, String pl1Rot,
 			String pl2Rot, int sizeOne, int sizeTwo, int scoreOne, int scoreTwo) {
 		Polygon player1Mouth;
 		Polygon player2Mouth;
