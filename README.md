@@ -14,7 +14,7 @@ Controller
 
 ##Precompiled
 
-The game packaged together with the controller. [All Releases](https://github.com/henmja/gs-Pacbattle/releases/tag/Release)
+The game packaged together with the controller. [All Releases](https://github.com/henmja/gs-Pacbattle/releases/tag/Releasev1.0.1)
 
 Unzip and the pacbattle folder can now be added to the game systems games directory.
 
