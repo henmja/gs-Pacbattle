@@ -110,8 +110,8 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		this.player2Health = player2Health;
 	}
 
-	private void movePlayerRight(Circle p12, Polygon pMouth, float position) {
-		if (p12.getCenterX() + p12.getRadius() + position >= WIDTH) {
+	private void movePlayerRight(Circle player, Polygon pMouth, float position) {
+		if (player.getCenterX() + player.getRadius() + position >= WIDTH) {
 			if (position != 0 && gameover != true) {
 				try {
 					AudioInputStream audioIn = AudioSystem
@@ -129,25 +129,69 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			}
 			position = 0;
 		}
-
-		if (p12 == p1) {
-			p1X = p12.getCenterX() + position;
-		} else if (p12 == p2) {
-			p2X = p12.getCenterX() + position;
-		} else if (p12 == p3) {
-			p3X = p12.getCenterX() + position;
-		} else if (p12 == p4) {
-			p4X = p12.getCenterX() + position;
+		if (player == p1) {
+			if (size1 == 1) {
+				position = 4;
+			} else if (size1 == 2) {
+				position = (float) 3.5;
+			} else if (size1 == 3) {
+				position = 3;
+			} else if (size1 == 4) {
+				position = (float) 2.5;
+			} else if (size1 == 5) {
+				position = 2;
+			}
+			p1X = player.getCenterX();
+		} else if (player == p2) {
+			if (size2 == 1) {
+				position = 4;
+			} else if (size2 == 2) {
+				position = (float) 3.5;
+			} else if (size2 == 3) {
+				position = 3;
+			} else if (size2 == 4) {
+				position = (float) 2.5;
+			} else if (size2 == 5) {
+				position = 2;
+			}
+			p2X = player.getCenterX();
+		} else if (player == p3) {
+			if (size3 == 1) {
+				position = 4;
+			} else if (size3 == 2) {
+				position = (float) 3.5;
+			} else if (size3 == 3) {
+				position = 3;
+			} else if (size3 == 4) {
+				position = (float) 2.5;
+			} else if (size3 == 5) {
+				position = 2;
+			}
+			p3X = player.getCenterX();
+		} else if (player == p4) {
+			if (size4 == 1) {
+				position = 4;
+			} else if (size4 == 2) {
+				position = (float) 3.5;
+			} else if (size4 == 3) {
+				position = 3;
+			} else if (size4 == 4) {
+				position = (float) 2.5;
+			} else if (size4 == 5) {
+				position = 2;
+			}
+			p4X = player.getCenterX();
 		}
-		if (position < 0 || position > 1) {
+		if (position < 0 || position > 5) {
 			return;
 		}
-		p12.setX(p12.getX() + position * 3);
-		pMouth.setX(pMouth.getX() + position * 3);
+		player.setX(player.getX() + position);
+		pMouth.setX(pMouth.getX() + position);
+		
 	}
 
-	private void movePlayerLeft(Circle p12, Polygon pMouth, float position) {
-		if (p12.getCenterX() - p12.getRadius() - position <= 0) {
+	private void movePlayerLeft(Circle player, Polygon pMouth, float position) {
+		if (player.getCenterX() - player.getRadius() - position <= 0) {
 			if (position != 0 && gameover != true) {
 				try {
 					AudioInputStream audioIn = AudioSystem
@@ -165,25 +209,69 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			}
 			position = 0;
 		}
-		if (p12 == p1) {
-			p1X = p12.getCenterX() - position;
-		} else if (p12 == p2) {
-			p2X = p12.getCenterX() - position;
-		} else if (p12 == p3) {
-			p3X = p12.getCenterX() - position;
-		} else if (p12 == p4) {
-			p4X = p12.getCenterX() - position;
+		if (player == p1) {
+			if (size1 == 1) {
+				position = 4;
+			} else if (size1 == 2) {
+				position = (float) 3.5;
+			} else if (size1 == 3) {
+				position = 3;
+			} else if (size1 == 4) {
+				position = (float) 2.5;
+			} else if (size1 == 5) {
+				position = 2;
+			}
+			p1X = player.getCenterX();
+		} else if (player == p2) {
+			if (size2 == 1) {
+				position = 4;
+			} else if (size2 == 2) {
+				position = (float) 3.5;
+			} else if (size2 == 3) {
+				position = 3;
+			} else if (size2 == 4) {
+				position = (float) 2.5;
+			} else if (size2 == 5) {
+				position = 2;
+			}
+			p2X = player.getCenterX();
+		} else if (player == p3) {
+			if (size3 == 1) {
+				position = 4;
+			} else if (size3 == 2) {
+				position = (float) 3.5;
+			} else if (size3 == 3) {
+				position = 3;
+			} else if (size3 == 4) {
+				position = (float) 2.5;
+			} else if (size3 == 5) {
+				position = 2;
+			}
+			p3X = player.getCenterX();
+		} else if (player == p4) {
+			if (size4 == 1) {
+				position = 4;
+			} else if (size4 == 2) {
+				position = (float) 3.5;
+			} else if (size4 == 3) {
+				position = 3;
+			} else if (size4 == 4) {
+				position = (float) 2.5;
+			} else if (size4 == 5) {
+				position = 2;
+			}
+			p4X = player.getCenterX();
 		}
 
-		if (position < 0 || position > 1) {
+		if (position < 0 || position > 4) {
 			return;
 		}
-		p12.setX(p12.getX() - position * 3);
-		pMouth.setX(pMouth.getX() - position * 3);
+		player.setX(player.getX() - position);
+		pMouth.setX(pMouth.getX() - position);
 	}
 
-	private void movePlayerUp(Circle p12, Polygon pMouth, float position) {
-		if (p12.getCenterY() - p12.getRadius() - position <= 0) {
+	private void movePlayerUp(Circle player, Polygon pMouth, float position) {
+		if (player.getCenterY() - player.getRadius() - position <= 0) {
 			if (position != 0 && gameover != true) {
 				try {
 					AudioInputStream audioIn = AudioSystem
@@ -201,21 +289,65 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			}
 			position = 0;
 		}
-		if (p12 == p1) {
-			p1Y = p12.getCenterY() - position;
-		} else if (p12 == p2) {
-			p2Y = p12.getCenterY() - position;
-		} else if (p12 == p3) {
-			p3Y = p12.getCenterY() - position;
-		} else if (p12 == p4) {
-			p4Y = p12.getCenterY() - position;
+		if (player == p1) {
+			if (size1 == 1) {
+				position = 4;
+			} else if (size1 == 2) {
+				position = (float) 3.5;
+			} else if (size1 == 3) {
+				position = 3;
+			} else if (size1 == 4) {
+				position = (float) 2.5;
+			} else if (size1 == 5) {
+				position = 2;
+			}
+			p1Y = player.getCenterY();
+		} else if (player == p2) {
+			if (size2 == 1) {
+				position = 4;
+			} else if (size2 == 2) {
+				position = (float) 3.5;
+			} else if (size2 == 3) {
+				position = 3;
+			} else if (size2 == 4) {
+				position = (float) 2.5;
+			} else if (size2 == 5) {
+				position = 2;
+			}
+			p2Y = player.getCenterY();
+		} else if (player == p3) {
+			if (size3 == 1) {
+				position = 4;
+			} else if (size3 == 2) {
+				position = (float) 3.5;
+			} else if (size3 == 3) {
+				position = 3;
+			} else if (size3 == 4) {
+				position = (float) 2.5;
+			} else if (size3 == 5) {
+				position = 2;
+			}
+			p3Y = player.getCenterY();
+		} else if (player == p4) {
+			if (size4 == 1) {
+				position = 4;
+			} else if (size4 == 2) {
+				position = (float) 3.5;
+			} else if (size4 == 3) {
+				position = 3;
+			} else if (size4 == 4) {
+				position = (float) 2.5;
+			} else if (size4 == 5) {
+				position = 2;
+			}
+			p4Y = player.getCenterY();
 		}
 
-		if (position < 0 || position > 1) {
+		if (position < 0 || position > 4) {
 			return;
 		}
-		p12.setY(p12.getY() - position * 3);
-		pMouth.setY(pMouth.getY() - position * 3);
+		player.setY(player.getY() - position);
+		pMouth.setY(pMouth.getY() - position);
 	}
 
 	private void movePlayer(Circle player, Polygon pMouth, float position) {
@@ -238,19 +370,63 @@ public class Pacbattle extends BasicGame implements ActionListener {
 			position = 0;
 		}
 		if (player == p1) {
-			p1Y = player.getCenterY() + position;
+			if (size1 == 1) {
+				position = 4;
+			} else if (size1 == 2) {
+				position = (float) 3.5;
+			} else if (size1 == 3) {
+				position = 3;
+			} else if (size1 == 4) {
+				position = (float) 2.5;
+			} else if (size1 == 5) {
+				position = 2;
+			}
+			p1Y = player.getCenterY();
 		} else if (player == p2) {
-			p2Y = player.getCenterY() + position;
+			if (size2 == 1) {
+				position = 4;
+			} else if (size2 == 2) {
+				position = (float) 3.5;
+			} else if (size2 == 3) {
+				position = 3;
+			} else if (size2 == 4) {
+				position = (float) 2.5;
+			} else if (size2 == 5) {
+				position = 2;
+			}
+			p2Y = player.getCenterY();
 		} else if (player == p3) {
-			p3Y = player.getCenterY() + position;
+			if (size3 == 1) {
+				position = 4;
+			} else if (size3 == 2) {
+				position = (float) 3.5;
+			} else if (size3 == 3) {
+				position = 3;
+			} else if (size3 == 4) {
+				position = (float) 2.5;
+			} else if (size3 == 5) {
+				position = 2;
+			}
+			p3Y = player.getCenterY();
 		} else if (player == p4) {
-			p4Y = player.getCenterY() + position;
+			if (size4 == 1) {
+				position = 4;
+			} else if (size4 == 2) {
+				position = (float) 3.5;
+			} else if (size4 == 3) {
+				position = 3;
+			} else if (size4 == 4) {
+				position = (float) 2.5;
+			} else if (size4 == 5) {
+				position = 2;
+			}
+			p4Y = player.getCenterY();
 		}
-		if (position < 0 || position > 1) {
+		if (position < 0 || position > 4) {
 			return;
 		}
-		player.setY(player.getY() + position * 3);
-		pMouth.setY(pMouth.getY() + position * 3);
+		player.setY(player.getY() + position);
+		pMouth.setY(pMouth.getY() + position);
 	}
 
 	@Override
@@ -3870,7 +4046,6 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 
 	}
-
 	public void respawnFood() {
 		int randX1, randX2, randX3, randX4, randY1, randY2, randY3, randY4;
 		Random rand = new Random();
@@ -3944,7 +4119,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP1(float position) {
+	public void moveP1(int position) {
 		movePlayer(p1, p1Mouth, position);
 		if (pl1Rot == "up") {
 			p1Mouth.setCenterY(p1Mouth.getCenterY() + 55 * j1 * h);
@@ -3972,7 +4147,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP1Up(float position) {
+	public void moveP1Up(int position) {
 		movePlayerUp(p1, p1Mouth, position);
 
 		if (pl1Rot == "down") {
@@ -3998,7 +4173,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP1Left(float position) {
+	public void moveP1Left(int position) {
 		movePlayerLeft(p1, p1Mouth, position);
 
 		if (pl1Rot == "down") {
@@ -4024,7 +4199,10 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP1Right(float position) {
+	public void moveP1Right(int position) {
+		if (size1==3) {
+			position = 10;
+		}
 		movePlayerRight(p1, p1Mouth, position);
 
 		if (pl1Rot == "up") {
@@ -4051,7 +4229,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP2(float position) {
+	public void moveP2(int position) {
 		movePlayer(p2, p2Mouth, position);
 		if (pl2Rot == "up") {
 			p2Mouth.setCenterY(p2Mouth.getCenterY() + 55 * j2 * h2);
@@ -4077,7 +4255,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP2Up(float position) {
+	public void moveP2Up(int position) {
 		movePlayerUp(p2, p2Mouth, position);
 		if (pl2Rot == "down") {
 			p2Mouth.setCenterY((p2Mouth.getCenterY() - 55 * j2 * h2));
@@ -4103,7 +4281,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP2Left(float position) {
+	public void moveP2Left(int position) {
 		movePlayerLeft(p2, p2Mouth, position);
 		if (pl2Rot == "up") {
 			p2Mouth.setCenterX((float) (p2Mouth.getCenterX() - 27.5 * j2 * h2));
@@ -4129,7 +4307,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP2Right(float position) {
+	public void moveP2Right(int position) {
 		movePlayerRight(p2, p2Mouth, position);
 		if (pl2Rot == "up") {
 			p2Mouth.setCenterX((float) (p2Mouth.getCenterX() + 27.5 * j2 * h2));
@@ -4154,7 +4332,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP3(float position) {
+	public void moveP3(int position) {
 		movePlayer(p3, p3Mouth, position);
 		if (pl3Rot == "up") {
 			p3Mouth.setCenterY((p3Mouth.getCenterY() + 55 * j3 * h3));
@@ -4180,7 +4358,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP3Up(float position) {
+	public void moveP3Up(int position) {
 		movePlayerUp(p3, p3Mouth, position);
 		if (pl3Rot == "down") {
 			p3Mouth.setCenterY((p3Mouth.getCenterY() - 55 * j3 * h3));
@@ -4206,7 +4384,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP3Left(float position) {
+	public void moveP3Left(int position) {
 		movePlayerLeft(p3, p3Mouth, position);
 		if (pl3Rot == "up") {
 			p3Mouth.setCenterX((float) (p3Mouth.getCenterX() - 27.5 * j3 * h3));
@@ -4232,7 +4410,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 
 	}
 
-	public void moveP3Right(float position) {
+	public void moveP3Right(int position) {
 		movePlayerRight(p3, p3Mouth, position);
 		if (pl3Rot == "up") {
 			p3Mouth.setCenterX((float) (p3Mouth.getCenterX() + 27.5 * j3 * h3));
@@ -4257,7 +4435,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP4(float position) {
+	public void moveP4(int position) {
 		movePlayer(p4, p4Mouth, position);
 		if (pl4Rot == "up") {
 			p4Mouth.setCenterX((float) (p4Mouth.getCenterY() + 55 * j4 * h4));
@@ -4282,7 +4460,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP4Up(float position) {
+	public void moveP4Up(int position) {
 		movePlayerUp(p4, p4Mouth, position);
 		if (pl4Rot == "down") {
 			p4Mouth.setCenterY((float) (p4Mouth.getCenterY() - 55 * j4 * h4));
@@ -4307,7 +4485,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP4Left(float position) {
+	public void moveP4Left(int position) {
 		movePlayerLeft(p4, p4Mouth, position);
 		if (pl4Rot == "up") {
 			p4Mouth.setCenterX((float) (p4Mouth.getCenterX() - 27.5 * j4 * h4));
@@ -4332,7 +4510,7 @@ public class Pacbattle extends BasicGame implements ActionListener {
 		}
 	}
 
-	public void moveP4Right(float position) {
+	public void moveP4Right(int position) {
 		movePlayerRight(p4, p4Mouth, position);
 		if (pl4Rot == "up") {
 			p4Mouth.setCenterX((float) (p4Mouth.getCenterX() + 27.5 * j4 * h4));
