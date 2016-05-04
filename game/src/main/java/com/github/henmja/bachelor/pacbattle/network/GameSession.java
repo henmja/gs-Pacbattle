@@ -29,8 +29,6 @@ public class GameSession {
 	private Session backend;
     
     private int x, y;
-
-    private Player leadingPlayer;
     
     public GameSession(Pacbattle game) throws DeploymentException {
         this.game = game;
@@ -66,13 +64,7 @@ public class GameSession {
         String action = jsonObj.getString("action");
         switch (action) {
         case "move": {
-        	/*game.setL(0);
-        	game.setD(1);
-        	game.setU(0);
-        	game.setR(0);*/
-        	//TEST
-        	//game.setPlayer1Health(0);
-        	//TEST
+        	
             String data = jsonObj.getJsonNumber("data").toString();
 
             int position;
@@ -88,9 +80,7 @@ public class GameSession {
             }
 
             String from = jsonObj.getString("from");
-            //TEST
-            //game.moveP1(position);
-            //TEST
+            
             int i = 0;
             for (Player player : players) {
             	if (i==4) {
@@ -111,10 +101,7 @@ public class GameSession {
     }
         switch (action) {
     case "moveLeft": {
-    	/*game.setL(1);
-    	game.setD(0);
-    	game.setU(0);
-    	game.setR(0);*/
+    	
     	
         String data = jsonObj.getJsonNumber("data").toString();
 
@@ -129,7 +116,7 @@ public class GameSession {
         if (!jsonObj.containsKey("from")) {
             return;
         }
-        //game.moveP1Left(position);
+        
         
         String from = jsonObj.getString("from");
         int i = 0;
@@ -154,10 +141,7 @@ public class GameSession {
         
         switch (action) {
         case "moveUp": {
-        	/*game.setL(0);
-        	game.setD(0);
-        	game.setU(1);
-        	game.setR(0);*/
+        	
         	
             String data = jsonObj.getJsonNumber("data").toString();
 
@@ -172,7 +156,7 @@ public class GameSession {
             if (!jsonObj.containsKey("from")) {
                 return;
             }
-            //game.moveP1Up(position);
+            
             
             String from = jsonObj.getString("from");
             int i = 0;
@@ -309,10 +293,7 @@ public class GameSession {
             
             
             case "moveRight": {
-            	/*game.setL(0);
-            	game.setD(0);
-            	game.setU(0);
-            	game.setR(1);*/
+            	
                 String data = jsonObj.getJsonNumber("data").toString();
 
                 int position;
@@ -344,259 +325,10 @@ public class GameSession {
                     }
                     i++;
                 }
-            }/*case "moveLeft": {
-            	game.setL(1);
-            	game.setD(0);
-            	game.setU(0);
-            	game.setR(0);
-            	
-                String data = jsonObj.getJsonNumber("data").toString();
-
-                int position;
-
-                try {
-                    position = Integer.parseInt(data);
-                } catch (Exception e) {
-                    position = -1;
-                }
-
-                if (!jsonObj.containsKey("from")) {
-                    return;
-                }
-                //game.moveP1Left(position);
-                
-                String from = jsonObj.getString("from");
-                int i = 0;
-                for (Player player : players) {
-                	if (i==4) {
-                		i = 0;
-                	}
-                    if (player.getId().equals(from) && i == 0) {
-                    	game.moveP1Left(position);
-                    } else if (player.getId().equals(from) && i == 1) {
-                    	game.moveP2Left(position);
-                    } else if (player.getId().equals(from) && i == 2) {
-                    	game.moveP3Left(position);
-                    } else if (player.getId().equals(from) && i == 3) {
-                    	game.moveP4Left(position);
-                    }
-                    i++;
-                }
             }
-            case "move": {
-            	game.setL(0);
-            	game.setD(1);
-            	game.setU(0);
-            	game.setR(0);
-            	//TEST
-            	//game.setPlayer1Health(0);
-            	//TEST
-                String data = jsonObj.getJsonNumber("data").toString();
-
-                int position;
-
-                try {
-                    position = Integer.parseInt(data);
-                } catch (Exception e) {
-                    position = -1;
-                }
-
-                if (!jsonObj.containsKey("from")) {
-                    return;
-                }
-
-                String from = jsonObj.getString("from");
-                //TEST
-                //game.moveP1(position);
-                //TEST
-                int i = 0;
-                for (Player player : players) {
-                	if (i==4) {
-                		i = 0;
-                	}
-                    if (player.getId().equals(from) && i == 0) {
-                    	game.moveP1(position);
-                    } else if (player.getId().equals(from) && i == 1) {
-                    	game.moveP2(position);
-                    } else if (player.getId().equals(from) && i == 2) {
-                    	game.moveP3(position);
-                    } else if (player.getId().equals(from) && i == 3) {
-                    	game.moveP4(position);
-                    }
-                    i++;
-                }
-            }
-            
-            
-           */ 
             
         }
-        /*
-        if (action == "move") {
-        	game.setL(0);
-        	game.setD(1);
-        	game.setU(0);
-        	game.setR(0);
-        	//TEST
-        	//game.setPlayer1Health(0);
-        	//TEST
-            String data = jsonObj.getJsonNumber("data").toString();
-
-            int position;
-
-            try {
-                position = Integer.parseInt(data);
-            } catch (Exception e) {
-                position = -1;
-            }
-
-            if (!jsonObj.containsKey("from")) {
-                return;
-            }
-
-            String from = jsonObj.getString("from");
-            //TEST
-            //game.moveP1(position);
-            //TEST
-            int i = 0;
-            for (Player player : players) {
-            	if (i==4) {
-            		i = 0;
-            	}
-                if (player.getId().equals(from) && i == 0) {
-                	game.moveP1(position);
-                } else if (player.getId().equals(from) && i == 1) {
-                	game.moveP2(position);
-                } else if (player.getId().equals(from) && i == 2) {
-                	game.moveP3(position);
-                } else if (player.getId().equals(from) && i == 3) {
-                	game.moveP4(position);
-                }
-                i++;
-            }
-
-			
-		}
-		if (action =="moveUp") {
-			game.setL(0);
-        	game.setD(0);
-        	game.setU(1);
-        	game.setR(0);
-        	
-            String data = jsonObj.getJsonNumber("data").toString();
-
-            int position;
-
-            try {
-                position = Integer.parseInt(data);
-            } catch (Exception e) {
-                position = -1;
-            }
-
-            if (!jsonObj.containsKey("from")) {
-                return;
-            }
-            //game.moveP1Up(position);
-            
-            String from = jsonObj.getString("from");
-            int i = 0;
-            for (Player player : players) {
-            	if (i==4) {
-            		i = 0;
-            	}
-                if (player.getId().equals(from) && i == 0) {
-                	game.moveP1Up(position);
-                } else if (player.getId().equals(from) && i == 1) {
-                	game.moveP2Up(position);
-                } else if (player.getId().equals(from) && i == 2) {
-                	game.moveP3Up(position);
-                } else if (player.getId().equals(from) && i == 3) {
-                	game.moveP4Up(position);
-                }
-                i++;
-            }
-
-		}
-		 if (action == "moveLeft") {
-			 game.setL(1);
-         	game.setD(0);
-         	game.setU(0);
-         	game.setR(0);
-         	
-             String data = jsonObj.getJsonNumber("data").toString();
-
-             int position;
-
-             try {
-                 position = Integer.parseInt(data);
-             } catch (Exception e) {
-                 position = -1;
-             }
-
-             if (!jsonObj.containsKey("from")) {
-                 return;
-             }
-             //game.moveP1Left(position);
-             
-             String from = jsonObj.getString("from");
-             int i = 0;
-             for (Player player : players) {
-             	if (i==4) {
-             		i = 0;
-             	}
-                 if (player.getId().equals(from) && i == 0) {
-                 	game.moveP1Left(position);
-                 } else if (player.getId().equals(from) && i == 1) {
-                 	game.moveP2Left(position);
-                 } else if (player.getId().equals(from) && i == 2) {
-                 	game.moveP3Left(position);
-                 } else if (player.getId().equals(from) && i == 3) {
-                 	game.moveP4Left(position);
-                 }
-                 i++;
-             }
-
-			
-		}
-		if (action == "moveRight") {
-			game.setL(0);
-        	game.setD(0);
-        	game.setU(0);
-        	game.setR(1);
-            String data = jsonObj.getJsonNumber("data").toString();
-
-            int position;
-
-            try {
-                position = Integer.parseInt(data);
-            } catch (Exception e) {
-                position = -1;
-            }
-
-            if (!jsonObj.containsKey("from")) {
-                return;
-            }
-            
-            String from = jsonObj.getString("from");
-            int i = 0;
-            for (Player player : players) {
-            	if (i==4) {
-            		i = 0;
-            	}
-                if (player.getId().equals(from) && i == 0) {
-                	game.moveP1Right(position);
-                } else if (player.getId().equals(from) && i == 1) {
-                	game.moveP2Right(position);
-                } else if (player.getId().equals(from) && i == 2) {
-                	game.moveP3Right(position);
-                } else if (player.getId().equals(from) && i == 3) {
-                	game.moveP4Right(position);
-                }
-                i++;
-            }
-
-			
-		}*/
+        
     }
 
     public Set<Player> getPlayersSet() {
@@ -606,24 +338,6 @@ public class GameSession {
 	public void setPlayersSet(Set<Player> playersSet) {
 		this.players = playersSet;
 	}
-
-	private void sendScoreToController(String id, int score) throws IOException, EncodeException {
-        backend.getBasicRemote().sendObject(Json.createObjectBuilder()
-                .add("action", "pass through")
-                .add("data", Json.createObjectBuilder()
-                        .add("action", "update score")
-                        .add("data", score))
-                .add("to", id)
-                .build());
-    }
-
-    public Player gameover() {
-        /*if (leadingPlayer != null && leadingPlayer.getScore() >= Pacbattle.MAX_SCORE) {
-            return leadingPlayer;
-        }*/
-
-        return null;
-    }
 
     public boolean isTwoP() {
 		return twoP;
@@ -709,3 +423,4 @@ public class GameSession {
 		}
     }
 }
+
