@@ -1,6 +1,13 @@
 #Pacbattle
-This game was developed by Henrik Lessø Mjaaland.
-As the name insinuates Pacbattle is inspired by Pac-Man. It can be two to four players. Pacbattle is a melee game, so it is best suited for four-player. There is two ways to win Pacbattle. All the players starts with three health points. Each player can have max five health points and minimum one (if a player has zero health points the given player is dead). When the game starts, a timer starts counting from sixty to zero. One can either win by eating all your opponents before the timer reaches zero or by having the highest score after the timer has reached zero (If a player is dead, but not all besides one are dead, the win order is solely based on score and it does not matter that the given player died). In order to eat a specific opponent one must bite the opponent until the opponent’s health bar reaches zero. The health bar drops by one for each bite. In order to bite a specific player one must intersect the player whilst being behind the player. There is also food respawning at different locations at a interval of three seconds. Biting another player or eating food increases score by one.
+As the name indicates, Pacbattle is inspired by Pac-Man. It can be two to four players. Pacbattle is a melee game, so it is best suited for four-player. 
+All the players starts with three health points. Each player can have max five health points and minimum one (if a player has zero health points the given player is dead). 
+
+When the game starts, a timer starts counting from sixty to zero. You can either win by eating all your opponents before the timer reaches zero or by having the highest score after the timer has reached zero (If for example a player is dead, but not all besides one are dead, the win order is solely based on score and it does not matter that the given player died).
+
+ In order to “kill” a specific opponent you must bite the opponent until the opponent’s health bar reaches zero (If a player is bitten, the given player’s health and score is decreased by one). In order to bite an opponent you must intersect the given opponent whilst being behind the given opponent. Each time you bite an opponent, both your health and score will increase by one while the opponent’s health and score will decrease by one. 
+
+There are four yellow dots/food respawning at different locations at an interval of three seconds. Eating food increases score and health by one. The players’ speed increases/decreases proportionally with the given player’s size.
+
 
 
 ##Table of Contents
