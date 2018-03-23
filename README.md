@@ -1,4 +1,4 @@
-#Pacbattle
+# Pacbattle
 As the name indicates, Pacbattle is inspired by Pac-Man. It can be two to four players. Pacbattle is a melee game, so it is best suited for four-player. 
 All the players starts with three health points. Each player can have max five health points and minimum one (if a player has zero health points the given player is dead). 
 
@@ -10,7 +10,7 @@ There are four yellow dots/food respawning at different locations at an interval
 
 
 
-##Table of Contents
+## Table of Contents
 
 Precompiled
 Develop
@@ -19,7 +19,7 @@ Screenshots
 Launcher 
 Controller
 
-##Precompiled
+## Precompiled
 
 Download the game system from https://github.com/s111/gamesystem.
 
@@ -28,7 +28,7 @@ The game packaged together with the controller. [All Releases](https://github.co
 
 Unzip and the pacbattle folder can now be added to the game systems games directory.
 
-##Develop
+## Develop
 
 Download the game system from https://github.com/s111/gamesystem.
 
@@ -40,7 +40,7 @@ mvn generate-resources Then you need to set VM options to -Djava.library.path=ta
 
 You should now be able to launch the game from your IDE. Remember that you need the game system running in the background for it to work.
 
-##Compile and package
+## Compile and package
 
 To package the game for distribuiton you must execute the following command:
 
@@ -54,9 +54,9 @@ You should now have a folder named pacbattle which looks something like this:
 
 pacbattle/game.json pacbattle/controller/index.html pacbattle/controller/controller.js pacbattle/bin/pacbattle.jar pacbattle/lib/lwjgl.dll pacbattle/lib/... This folder can now be added to the game systems games directory.
 
-##Screenshots
+## Screenshots
 
-###Launcher
+### Launcher
 ![image](https://cloud.githubusercontent.com/assets/10501925/14324923/3fbdfd04-fc27-11e5-94b8-cb62e461c944.png)
-###Controller
+### Controller
 ![image](https://cloud.githubusercontent.com/assets/10501925/14324931/4da0fa48-fc27-11e5-97ef-e8524c6e086d.png)
