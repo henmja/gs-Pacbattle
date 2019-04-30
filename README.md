@@ -13,10 +13,15 @@ There are four yellow dots/food respawning at different locations at an interval
 ## Table of Contents
 
 Precompiled
+
 Develop
+
 Compile and package 
+
 Screenshots 
+
 Launcher 
+
 Controller
 
 ## Precompiled
